@@ -71,7 +71,7 @@ const SwedishAlphabet: React.FC = () => {
           >
             <div className="content">
               <div className={`front ${letter.isVowel ? 'vowel-card' : ''}`}>
-                <img src={letter.image} alt={letter.uppercase} />
+                <img src={`${BASE_URL}letter.image`} alt={letter.uppercase} />
                 <figcaption>
                   {letter.uppercase} {letter.lowercase}
                 </figcaption>
