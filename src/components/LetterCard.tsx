@@ -18,7 +18,6 @@ export function LetterCard({
   lowercase,
   image,
   delay,
-  color,
   soundUrl
 }: LetterCardProps) {
   const [isFlipped, setIsFlipped] = useState(false)
