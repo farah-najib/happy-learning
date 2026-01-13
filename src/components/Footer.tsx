@@ -1,4 +1,4 @@
-import { Heart, BookOpen, Sparkles } from 'lucide-react'
+import {  BookOpen, Sparkles } from 'lucide-react'
 import { motion } from 'motion/react'
 
 export function Footer() {
@@ -63,7 +63,7 @@ export function Footer() {
 
           {/* Bottom Section */}
           <div className="border-t border-white/20 pt-6">
-           
+
 
             <p className="text-white/70 text-sm mt-3">
               © 2026 Happy learning !
