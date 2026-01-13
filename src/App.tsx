@@ -1,52 +1,27 @@
-import './styles/App.css'
-import { useState, useEffect } from 'react'
-import SwedishAlphabet from './components/SwedishAlphabet'
-import VowelTable from './components/VowelTable'
+import { useState } from 'react'
+import { AlphabetGrid } from './components/AlphabetGrid'
+import { Header } from './components/Header'
+import { Navigation } from './components/Navigation'
+import { VowelLearning } from './components/VowelLearning'
+import { Footer } from './components/Footer'
 
-// import GooeyDots from './components/GooeyDots'
-import { Routes, Route } from 'react-router'
-import About from './components/About'
-function App() {
-  const [, setShowApp] = useState(false)
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowApp(true)
-    }, 3000)
-
-    return () => clearTimeout(timer)
-  }, [])
+export default function App() {
+  const [activeTab, setActiveTab] = useState<
+    'bokstäver' | 'vokaler' | 'konsonanter' | 'vokal-lära'
+  >('bokstäver')
 
   return (
-    <>
-      {/* <>{showApp?<SwedishAlphabet/>:<GooeyDots/>}</> */}
-      <header>
-        <ul>
-          <li>
-            <a href="https://github.com/farah-najib/happy-learning">Github </a>
-          </li>
-          <li>
-            <a href="/about">
-              <i className="fas fa-user-alt"></i> About
-            </a>
-          </li>
-        </ul>
-
-        <span className="title-holder">
-          <a href="/">
-            <span className="title">Happy Learning</span>
-          </a>
-        </span>
-      </header>
-      <div className="app">
-        <Routes>
-          <Route path="/" element={<SwedishAlphabet />} />
-          <Route path="/vowel" element={<VowelTable />} />
-          <Route path="/about" element={<About />} />
-        </Routes>
-      </div>
-    </>
+    <div className="min-h-screen" style={{ backgroundColor: '#F7F7F7' }}>
+      <Header />
+      <Navigation activeTab={activeTab} setActiveTab={setActiveTab} />
+      <main className="container mx-auto px-4 py-8">
+        {activeTab === 'vokal-lära' ? (
+          <VowelLearning />
+        ) : (
+          <AlphabetGrid activeTab={activeTab} />
+        )}
+      </main>
+      <Footer />
+    </div>
   )
 }
-
-export default App
