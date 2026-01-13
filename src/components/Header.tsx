@@ -11,20 +11,7 @@ export function Header() {
               Happy learning!
             </h1>
           </div>
-          <div className="flex gap-4">
-            <a
-              href="#"
-              className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/30 transition-all"
-            >
-              Om oss
-            </a>
-            <a
-              href="#"
-              className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/30 transition-all"
-            >
-              Github
-            </a>
-          </div>
+       
         </div>
       </div>
     </header>

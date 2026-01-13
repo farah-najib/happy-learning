@@ -10,7 +10,6 @@ interface LetterCardProps {
   color: string
   delay: number
   soundUrl: string
-
 }
 
 export function LetterCard({
@@ -46,7 +45,7 @@ export function LetterCard({
         className="cursor-pointer"
       >
         {/* ---- POLAROID 3D FLIP CARD ---- */}
-        <div className="relative w-[230px] h-[300px] [perspective:1000px] mx-auto">
+        <div className="relative w-full max-w-[230px] aspect-[23/30] [perspective:1000px] mx-auto">
           <div
             className={`
               relative w-full h-full
@@ -79,8 +78,12 @@ export function LetterCard({
 
               {/* Caption area */}
               <div className="flex flex-col items-center justify-center h-[30%] pt-3">
-                <div className="text-5xl font-bold">{uppercase}</div>
-                <div className="text-gray-600 text-lg italic">{lowercase}</div>
+                <div className="text-3xl md:text-5xl font-bold">
+                  {uppercase}
+                </div>
+                <div className="text-gray-600 text-base md:text-lg italic">
+                  {lowercase}
+                </div>
               </div>
 
               {/* Sound icon */}
@@ -100,10 +103,11 @@ export function LetterCard({
                 [transform:rotateY(180deg)]
                 [backface-visibility:hidden]
                 flex items-center justify-center
-                text-7xl font-bold
+                text-4xl md:text-7xl font-bold
               "
             >
-              {uppercase}{lowercase}
+              {uppercase}
+              {lowercase}
             </div>
           </div>
         </div>
